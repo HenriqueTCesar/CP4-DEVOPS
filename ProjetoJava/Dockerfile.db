@@ -1,0 +1,7 @@
+FROM postgres:15-alpine
+
+ENV POSTGRES_DB=dimdim_db
+ENV POSTGRES_USER=dimdim_user
+ENV PGDATA=/var/lib/postgresql/data/pgdata
+
+COPY init.sql /docker-entrypoint-initdb.d/
